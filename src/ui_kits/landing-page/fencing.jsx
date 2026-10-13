@@ -426,9 +426,10 @@ function CollectionsMobileCarousel({ isMobile }) {
           }}
         >
           <img
-            src={PH + to2k(img)}
+            src={resolvePhoto(img, isMobile)}
             alt={name}
             loading="eager"
+            className="collection-card-img"
             style={{
               position: 'absolute',
               inset: 0,
