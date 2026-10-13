@@ -477,7 +477,7 @@ function LocalBuilt() {
   const getSiteSrc = f => SITE + (isMobile ? toThumb(f) : f);
   const pts = [['factory', 'Canoga Park facility', 'Cut, welded, powder-coated, and finished under one roof.'], ['hard-hat', 'Our own in-house crew', 'The people who fabricate your project are the people who install it.'], ['layers', 'Coordinated systems', 'Future gates and perimeter elements can match in style, color, and profile.']];
   return <section style={{ background: NAVY, color: '#fff', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(100%,440px),1fr))' }}>
-    <div style={{ minHeight: 480, background: 'url(' + getSiteSrc('mulholland-brand-1.jpg') + ') center/cover' }}></div>
+    <div className="img-zoom-wrap" style={{ minHeight: 480, overflow: 'hidden', position: 'relative' }}><img src={getSiteSrc('mulholland-brand-1.jpg')} alt="Mulholland Local Team" className="banner-zoom-img ambient-zoom-bg" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></div>
     <div style={{ padding: 'clamp(48px,7vw,104px) clamp(24px,6vw,88px)', display: 'flex', flexDirection: 'column', gap: 22, justifyContent: 'center' }}>
       <Kicker color="var(--mb-yellow)">Local manufacturing</Kicker>
       <h2 style={{ ...bH2, color: '#fff' }}>Local Fabrication. One Team. A Coordinated Result.</h2>
@@ -718,7 +718,7 @@ function FinalQuote() {
   const isMobile = useIsMobile(768);
   const getSiteSrc = f => SITE + (isMobile ? toThumb(f) : f);
   // FenceForm from import
-  return <section id="quote-b2" style={{ position: 'relative', background: 'linear-gradient(90deg, rgba(0,26,48,.95) 0%, rgba(0,40,72,.85) 50%, rgba(0,59,105,.7) 100%), url(' + getSiteSrc('craft-1.SE-ikNJG_1l86za.webp') + ') center/cover', color: '#fff', padding: isMobile ? '48px 0 60px' : 'clamp(72px,9vw,128px) 0' }}>
+  return <section id="quote-b2" className="img-zoom-wrap" style={{ position: 'relative', overflow: 'hidden', color: '#fff', padding: isMobile ? '48px 0 60px' : 'clamp(72px,9vw,128px) 0' }}><div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}><img src={getSiteSrc('craft-1.SE-ikNJG_1l86za.webp')} alt="Mulholland Craft" className="banner-zoom-img ambient-zoom-bg" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></div><div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(0,26,48,.95) 0%, rgba(0,40,72,.85) 50%, rgba(0,59,105,.7) 100%)' }} />
     <BWrap style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit,minmax(min(100%,400px),1fr))', gap: isMobile ? 32 : 'clamp(40px,6vw,96px)', alignItems: 'center' }}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 20, alignItems: 'flex-start' }}>
         <Kicker color="var(--mb-yellow)">Limited-time offer</Kicker>

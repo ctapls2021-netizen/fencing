@@ -871,7 +871,7 @@ function FencingPage() {
           <p style={{ ...lpBody, fontSize: 12 }}>Mulholland Brand creates custom aluminum fencing for Southern California homes that need a modern exterior solution, not a standard, one-size-fits-all panel. Our team will review your space, your preferred style, and the design details that matter before recommending the right fencing system for your property.</p>
           <FB href="#quote" style={{ marginTop: 6, width: isMobile ? '100%' : 'auto', textAlign: 'center', justifyContent: 'center' }}>Get My Free On-Site Estimate</FB>
         </div>
-        <div style={{ height: isMobile ? 240 : 360, borderRadius: 6, overflow: 'hidden', background: 'url(' + resolvePhoto('backyard-privacy-slats.jpg', isMobile) + ') center/cover', boxShadow: '0 4px 14px rgba(0,0,0,.08)' }} />
+        <div className="img-zoom-wrap" style={{ height: isMobile ? 240 : 360, borderRadius: 6, overflow: 'hidden', position: 'relative', boxShadow: '0 4px 14px rgba(0,0,0,.08)' }}><img src={resolvePhoto('backyard-privacy-slats.jpg', isMobile)} alt="Backyard Privacy Slats" className="banner-zoom-img" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></div>
       </Wrap>
     </section>
 
@@ -890,7 +890,7 @@ function FencingPage() {
     </section>
 
     <section style={{ background: 'var(--mb-blue)', color: '#fff', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))' }}>
-      <div style={{ minHeight: 340, background: 'url(' + resolvePhoto('woodlook-walk-gate.jpg', isMobile) + ') center/cover' }} />
+      <div className="img-zoom-wrap" style={{ minHeight: 340, overflow: 'hidden', position: 'relative' }}><img src={resolvePhoto('woodlook-walk-gate.jpg', isMobile)} alt="Wood-Look Walk Gate" className="banner-zoom-img" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></div>
       <div style={{ padding: '56px 48px', display: 'flex', flexDirection: 'column', gap: 14, justifyContent: 'center', alignItems: 'flex-start' }}>
         <FTag variant="text" icon="shield-check" accent="Built" accentColor="#fff" iconColor="#fff" style={{ color: '#fff' }}>to last</FTag>
         <h2 style={{ ...lpH2, color: '#fff' }}>Why Homeowners Choose Aluminum Fencing</h2>
@@ -910,7 +910,7 @@ function FencingPage() {
 
     <ProductGallery />
 
-    <section style={{ position: 'relative', minHeight: 440, display: 'flex', alignItems: 'center', background: 'linear-gradient(90deg, rgba(12,20,36,.92) 0%, rgba(12,20,36,.78) 45%, rgba(12,20,36,.45) 100%), url(' + resolvePhoto('factory-floor.jpg', isMobile) + ') center/cover', color: '#fff' }}>
+    <section className="img-zoom-wrap" style={{ position: 'relative', minHeight: 440, display: 'flex', alignItems: 'center', overflow: 'hidden', color: '#fff' }}><div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}><img src={resolvePhoto('factory-floor.jpg', isMobile)} alt="Factory Floor" className="banner-zoom-img ambient-zoom-bg" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></div><div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(12,20,36,.92) 0%, rgba(12,20,36,.78) 45%, rgba(12,20,36,.45) 100%)' }} />
       <Wrap max={1060} style={{ width: '100%', padding: '80px 24px' }}>
         <div style={{ maxWidth: 560, display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'flex-start' }}>
           <FEyebrow color="var(--mb-yellow)">The Mulholland advantage</FEyebrow>
@@ -954,7 +954,7 @@ function FencingPage() {
 
     <div style={{ background: 'var(--mb-tint)' }}><Faq wide items={FENCE_FAQ} /></div>
 
-    <section style={{ background: 'linear-gradient(180deg, rgba(8,12,22,.55) 0%, rgba(10,22,48,.72) 45%, #0B1A3A 100%), url(' + resolvePhoto('house-modern-slat-fence.jpg', isMobile) + ') center 35%/cover', color: '#fff', minHeight: isMobile ? 480 : 620, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: isMobile ? '72px 16px 80px' : '140px 24px 120px', textAlign: 'center' }}>
+    <section className="img-zoom-wrap" style={{ position: 'relative', overflow: 'hidden', color: '#fff', minHeight: isMobile ? 480 : 620, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: isMobile ? '72px 16px 80px' : '140px 24px 120px', textAlign: 'center' }}><div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}><img src={resolvePhoto('house-modern-slat-fence.jpg', isMobile)} alt="Modern Slat Fence" className="banner-zoom-img ambient-zoom-bg" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%', display: 'block' }} /></div><div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(8,12,22,.55) 0%, rgba(10,22,48,.72) 45%, #0B1A3A 100%)' }} />
       <div style={{ maxWidth: 820, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
         <FTag accent="Limited-time" style={{ background: 'var(--mb-navy)' }}>Offer</FTag>
         <h2 style={{ ...lpH2, color: '#fff', fontSize: 'clamp(28px,4.2vw,48px)' }}><span style={{ color: 'var(--mb-yellow)' }}>Save Up to 60%</span> on Select Premium Aluminum Fencing Styles</h2>

@@ -85,5 +85,50 @@
   color: var(--mb-blue) !important;
 }
 
+/* ==========================================================================
+   IMAGE ZOOM INTERACTIONS (Universal, Cards, Galleries, & Banners)
+   ========================================================================== */
 
+/* Universal zoom wrapper */
+.img-zoom-wrap {
+  overflow: hidden !important;
+  position: relative;
+}
 
+.img-zoom-wrap img,
+.img-zoom-wrap picture,
+.img-zoom-target,
+.collection-card-img,
+.gallery-zoom-img,
+.banner-zoom-img {
+  transition: transform 650ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform;
+}
+
+/* Hover Zoom-in Trigger */
+.img-zoom-wrap:hover img,
+.img-zoom-wrap:hover picture,
+.img-zoom-wrap:hover .banner-zoom-img,
+.collection-card:hover .collection-card-img,
+.collection-card:focus-within .collection-card-img,
+.gallery-tile:hover .gallery-zoom-img,
+.step-card:hover .step-card-img,
+.img-zoom-target:hover {
+  transform: scale(1.09) !important;
+}
+
+/* Ambient / Continuous Zoom-in Animation for Hero & Background Banners */
+@keyframes ambientZoomNoticeable {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.14);
+  }
+}
+
+.ambient-zoom-bg {
+  animation: ambientZoomNoticeable 12s ease-in-out infinite alternate !important;
+  will-change: transform;
+  transform-origin: center center;
+}
