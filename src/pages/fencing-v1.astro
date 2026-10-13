@@ -1,0 +1,62 @@
+---
+import FencingPage from '../ui_kits/landing-page/fencing.jsx';
+import '../styles/styles.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <title>Mulholland Brand — Premium Aluminum Fencing | Save Up to 60% (V1)</title>
+    <link rel="icon" type="image/png" href="/assets/logo/mb-road-mark-blue.png" />
+    <script is:inline>
+      window.MB_ASSET_BASE = '/assets/';
+    </script>
+    <style is:global>
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+        background: #fff;
+        font-family: var(--font-body);
+        color: var(--mb-ink);
+        box-sizing: border-box;
+      }
+      *, *:before, *:after {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      #root {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: clip;
+      }
+      a {
+        color: var(--mb-blue);
+      }
+      a:hover {
+        color: var(--mb-blue-deep);
+      }
+      @keyframes bWordIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <FencingPage client:load />
+    </div>
+  </body>
+</html>
