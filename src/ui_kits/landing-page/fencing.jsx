@@ -861,7 +861,7 @@ function FencingPage() {
         </div>
       )}
       {isMobile && (
-        <div style={{ width: '100%', height: 'clamp(300px, 45vh, 400px)', overflow: 'hidden', position: 'relative' }}>
+        <div style={{ width: '100%', height: 'clamp(360px, 54vh, 480px)', overflow: 'hidden', position: 'relative' }}>
           <img
             src={resolvePhoto('hero-fence-10.jpg', isMobile)}
             alt="Mulholland Brand Fencing"
