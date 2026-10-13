@@ -38,7 +38,7 @@
   transform-origin: center center;
 }
 
-/* Text llamador pulse on "Up to 60%*" letters (direct typography effect) */
+/* Text llamador pulse on "Up to 60%*" letters (direct typography effect for V2) */
 @keyframes textLlamadorLetters {
   0%, 100% {
     transform: scale(1);
@@ -54,6 +54,23 @@
   display: inline-block;
   animation: textLlamadorLetters 2.4s ease-in-out infinite !important;
   will-change: transform, filter;
+}
+
+/* "Save Up to 60%*" yellow box llamador pulse (V1) */
+@keyframes badgeAttentionPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: scale(1.055);
+    box-shadow: 0 14px 38px rgba(254, 204, 42, 0.75), 0 0 0 6px rgba(254, 204, 42, 0.35);
+  }
+}
+
+.badge-attention-pulse {
+  animation: badgeAttentionPulse 2.4s ease-in-out infinite !important;
+  will-change: transform, box-shadow;
 }
 
 
