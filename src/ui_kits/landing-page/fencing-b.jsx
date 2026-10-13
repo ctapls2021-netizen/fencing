@@ -9,6 +9,7 @@ import { PH, Faq } from './shared.jsx';
 import {
   FenceForm,
   COLLECTIONS,
+  CollectionCard,
   STEPS,
   FENCE_FAQ,
   DISCLAIMER,
@@ -221,19 +222,71 @@ function Perimeter() {
 
 function StylePicker() {
   const isMobile = useIsMobile(768);
+  const [view, setView] = React.useState('grid');
   const [a, setA] = React.useState(0);
   const C = COLLECTIONS;
   return <section style={{ background: 'var(--mb-tint)', padding: isMobile ? '48px 0 56px' : 'clamp(72px,9vw,120px) 0' }}>
     <BWrap>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: isMobile ? 'flex-start' : 'flex-end', gap: 24, flexWrap: 'wrap', marginBottom: isMobile ? 32 : 44 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: isMobile ? 'flex-start' : 'flex-end', gap: 24, flexWrap: 'wrap', marginBottom: isMobile ? 32 : 36 }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 14, maxWidth: 620 }}>
           <Kicker>Eight custom aluminum collections</Kicker>
           <h2 style={bH2}>Find the Fencing Style That Fits Your Property</h2>
         </div>
         <p style={{ ...bBody, maxWidth: 460 }}>Your fence should match the architecture of your home, the privacy you want, and the way your property is laid out. We offer eight custom aluminum fencing collections, each powder-coated, rust-free, and built to follow your terrain.</p>
       </div>
+
+      {!isMobile && (
+        <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10, marginBottom: 28 }}>
+          <button
+            type="button"
+            onClick={() => setView('grid')}
+            style={{
+              padding: '8px 18px',
+              borderRadius: 999,
+              border: '1px solid ' + (view === 'grid' ? NAVY : 'var(--border-hairline)'),
+              background: view === 'grid' ? NAVY : '#fff',
+              color: view === 'grid' ? '#fff' : 'var(--text-body)',
+              fontSize: 13,
+              fontFamily: 'var(--font-ui)',
+              fontWeight: 600,
+              cursor: 'pointer',
+              transition: 'all .2s ease'
+            }}
+          >
+            Collection Cards (8)
+          </button>
+          <button
+            type="button"
+            onClick={() => setView('studio')}
+            style={{
+              padding: '8px 18px',
+              borderRadius: 999,
+              border: '1px solid ' + (view === 'studio' ? NAVY : 'var(--border-hairline)'),
+              background: view === 'studio' ? NAVY : '#fff',
+              color: view === 'studio' ? '#fff' : 'var(--text-body)',
+              fontSize: 13,
+              fontFamily: 'var(--font-ui)',
+              fontWeight: 600,
+              cursor: 'pointer',
+              transition: 'all .2s ease'
+            }}
+          >
+            Interactive Studio
+          </button>
+        </div>
+      )}
+
       {isMobile ? (
         <CollectionsMobileCarousel isMobile={isMobile} />
+      ) : view === 'grid' ? (
+        <>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(264px,1fr))', gap: '28px 24px', textAlign: 'left' }}>
+            {C.map(c => <CollectionCard key={c[0]} c={c} />)}
+          </div>
+          <div style={{ textAlign: 'center', marginTop: 40 }}>
+            <BB href="#quote-b" size="lg" style={{ background: NAVY, borderColor: NAVY }}>Explore My Fencing Options</BB>
+          </div>
+        </>
       ) : (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(24px,4vw,56px)', alignItems: 'stretch' }}>
           <div role="tablist" style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', borderTop: '1px solid var(--border-hairline)' }}>

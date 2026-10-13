@@ -44,14 +44,14 @@ const resolvePhoto = (img, isMobile, force2k = false) => {
 
 const FENCE_STYLES = ['Wood-Look Aluminum Fencing', 'Glass Fencing', 'Solid Fencing', 'Laser-Cut Fencing', 'I’m Not Sure Yet'];
 const COLLECTIONS = [
-  ['Hi-Tech Fencing', 'Modern lines. Real privacy.', 'Narrow horizontal profiles create a clean, contemporary boundary that screens views in while maintaining visibility from inside your property. Choose a framed, frameless, or 45° angled profile for a more privacy-forward look.', 'gate-hitech-garden.jpg', 'horizontal-slat-gate'],
-  ['Profile 24 Fencing', 'Our most versatile series.', 'Simple 24mm aluminum slats in a range of widths and gap sizes make this a flexible option for almost any home or business. Choose horizontal, vertical, mixed-profile, or glass-accented configurations, including layouts engineered for hilly terrain.', 'gate-row-1.jpg', 'pedestrian-gate'],
-  ['Glass Series Fencing', 'Reflective glass. Uncompromised security.', 'Create a sleek, private perimeter with laminated black or white glass set in a fully welded aluminum frame. Black glass delivers a dark reflective finish, while white glass softly diffuses light.', 'house-modern-slat-fence.jpg', 'glass-garage-door'],
-  ['Solid Series Fencing', 'Maximum privacy. Elegant and strong.', 'Closed aluminum panels create a complete visual barrier with no gaps. Select from horizontal or vertical profiles, classic panelled designs, frameless surfaces, or solid panels with integrated glass sections.', 'gate-profile24-palm.jpg', 'solid-vertical-gate'],
-  ['Wood-Like Fencing', 'The warmth of wood. None of the upkeep.', 'Bring the natural look of Oak, Walnut, or Cedar to your property with aluminum fencing designed to avoid the rot, splitting, cracking, and degradation associated with wood.', 'woodlook-fence-1.jpg', 'double-swing-gate'],
-  ['Laser-Cut Fencing', 'Turn your perimeter into a canvas.', 'Make your fencing a design feature with a laser-cut aluminum panel. Select from 39 catalog patterns, from botanical screens to abstract geometry, or discuss using your own artwork as a one-of-one design.', 'gate-row-3.jpg', 'laser-cut-panel'],
-  ['Classic 48 Fencing', 'Timeless spear-top elegance.', 'Get the traditional character of a picket fence in maintenance-free aluminum. Choose upright spear-top pickets for a classic wrought-iron-inspired look, or a horizontal layout for a lower, longer visual line across a wide frontage.', 'gate-row-2.jpg', 'traditional-picket-gate'],
-  ['Tongue & Groove Fencing', 'Sleek, mixed-profile designs.', 'Tongue-and-groove joints close each seam so the fence reads as one continuous surface. This clean, restrained style can run horizontally or vertically and can be paired with Hi-Tech or Solid elements.', 'woodlook-fence-2.jpg', 'walk-gate-keypad'],
+  ['Hi-Tech Fencing', 'Modern lines, real privacy.', 'Narrow horizontal profiles sit inside a clean traditional frame, giving you greater security and privacy without completely obscuring your home. You keep visibility from inside looking out, while the view in is screened.', 'hi-tech-fence.webp', 'horizontal-slat-gate'],
+  ['Profile 24 Fencing', 'Our most versatile series.', 'Simple 24mm aluminum slats in a range of widths and gap sizes make this our most versatile series, suitable for almost any property and engineered to accommodate hilly terrain.', 'profile24-fence.webp', 'pedestrian-gate'],
+  ['Glass Series Fencing', 'Reflective glass, uncompromised security.', 'Laminated black or white glass set in a fully welded aluminum frame. From outside it reads as a sleek, reflective private perimeter; from inside you keep daylight and view.', 'glass-series-fence.webp', 'glass-garage-door'],
+  ['Solid Series Fencing', 'Maximum privacy, elegant and strong.', 'Closed aluminum panels create a complete visual barrier with no gaps at all. Maximum security and zero visibility from the street for total peace of mind.', 'solid-series-fence.webp', 'solid-vertical-gate'],
+  ['Wood-Like Fencing', 'The warmth of wood, none of the upkeep.', 'Bring the natural look of Oak, Walnut, or Cedar to your property with aluminum fencing designed to avoid the rot, splitting, cracking, and degradation associated with wood.', 'wood-like-fence.webp', 'double-swing-gate'],
+  ['Laser-Cut Fencing', 'Turn your perimeter into a canvas.', 'Make your fencing a design feature with an aluminum panel cut to a pattern. Select from 39 catalog designs or discuss using your own artwork as a one-of-one custom design.', 'laser-cut-fence.webp', 'laser-cut-panel'],
+  ['Classic 48 Fencing', 'Timeless spear-top elegance.', 'Get the traditional character of a classic iron picket fence with upright spear-top pickets in maintenance-free powder-coated aluminum that will never rust or rot.', 'classic48-fence.webp', 'traditional-picket-gate'],
+  ['Tongue & Groove Fencing', 'Sleek, mixed-profile designs.', 'Tongue-and-groove joints close each seam so the fence reads as one continuous architectural surface. A restrained, modern, and solid look for your perimeter.', 'tongue-groove-fence.webp', 'walk-gate-keypad'],
 ];
 const STEPS = [
   ['Request Your Free On-Site Estimate', 'Tell us about your property, ZIP Code, and the fencing style you are considering.'],
@@ -970,4 +970,4 @@ function FencingPage() {
   </div>;
 }
 export default FencingPage;
-export { FencingPage, ProductGallery, FenceForm, FENCE_STYLES, COLLECTIONS, STEPS, FENCE_FAQ, DISCLAIMER, CollectionsMobileCarousel, StepsMobileTabs, TestimonialsCarousel, FENCE_REVIEWS };
+export { FencingPage, ProductGallery, FenceForm, FENCE_STYLES, COLLECTIONS, CollectionCard, STEPS, FENCE_FAQ, DISCLAIMER, CollectionsMobileCarousel, StepsMobileTabs, TestimonialsCarousel, FENCE_REVIEWS };
