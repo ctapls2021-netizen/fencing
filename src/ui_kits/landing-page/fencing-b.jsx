@@ -71,9 +71,9 @@ function BHero() {
     return (
       <section style={{ position: 'relative', overflow: 'hidden', color: '#fff', background: '#0B1A2C' }}>
         {/* Top clean image with zoom-in */}
-        <div style={{ position: 'relative', width: '100%', aspectRatio: '16 / 9', overflow: 'hidden' }}>
-          <img className="hero-zoom-bg" src={SITE + toThumb(HERO_IMGS[0])} alt="Premium Aluminum Fencing" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(11,26,44,.95) 100%)' }} />
+        <div style={{ position: 'relative', width: '100%', height: 'clamp(300px, 45vh, 400px)', overflow: 'hidden' }}>
+          <img className="hero-zoom-bg" src={SITE + toThumb(HERO_IMGS[0])} alt="Premium Aluminum Fencing" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 60%', display: 'block' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(11,26,44,.95) 100%)' }} />
         </div>
 
         {/* Content & CTA */}

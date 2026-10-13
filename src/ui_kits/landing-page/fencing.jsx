@@ -768,14 +768,14 @@ function FencingPage() {
         </div>
       )}
       {isMobile && (
-        <div style={{ width: '100%', aspectRatio: '16 / 9', overflow: 'hidden', position: 'relative' }}>
+        <div style={{ width: '100%', height: 'clamp(300px, 45vh, 400px)', overflow: 'hidden', position: 'relative' }}>
           <img
             src={resolvePhoto('hero-fence-10.jpg', isMobile)}
             alt="Mulholland Brand Fencing"
             className="hero-zoom-bg"
-            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 60%', display: 'block' }}
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(11,26,44,.95) 100%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0) 65%, rgba(11,26,44,.95) 100%)' }} />
         </div>
       )}
       <Wrap max={1320} style={{ position: 'relative', zIndex: 1, display: 'flex', gap: 'clamp(24px,4vw,96px)', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', padding: isMobile ? '28px 16px 40px' : '60px clamp(24px,4vw,56px) 52px' }}>
