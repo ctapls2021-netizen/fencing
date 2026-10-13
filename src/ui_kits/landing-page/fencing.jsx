@@ -161,10 +161,10 @@ function CollectionCard({ c: [name, tag, desc, img, icon] }) {
   const [flip, setFlip] = React.useState(false);
   const label = (
     <div style={{ position: 'absolute', left: '8%', right: '8%', bottom: 0, background: '#fff', borderRadius: '6px 6px 0 0', overflow: 'hidden', zIndex: 3, boxShadow: '0 -2px 12px rgba(0,0,0,.1)' }}>
-      <div style={{ height: 62, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff', padding: '6px 12px' }}>
-        <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 78, height: 44, objectFit: 'contain', opacity: .95, display: 'block' }} />
+      <div style={{ height: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff', padding: '4px 10px' }}>
+        <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 48, height: 28, objectFit: 'contain', opacity: .95, display: 'block' }} />
       </div>
-      <div style={{ background: 'var(--mb-blue)', color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 16, lineHeight: 1.15, textAlign: 'center', padding: '11px 8px' }}>
+      <div style={{ background: 'var(--mb-blue)', color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 15, lineHeight: 1.15, textAlign: 'center', padding: '9px 8px' }}>
         {name}
       </div>
     </div>
@@ -249,7 +249,7 @@ function CollectionCard({ c: [name, tag, desc, img, icon] }) {
           WebkitFontSmoothing: 'antialiased',
         }}
       >
-        <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 56, height: 34, flex: 'none', objectFit: 'contain', objectPosition: 'left center', filter: 'invert(1)', display: 'block', marginBottom: 2 }} />
+        <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 44, height: 26, flex: 'none', objectFit: 'contain', objectPosition: 'left center', filter: 'invert(1)', display: 'block', marginBottom: 2 }} />
         <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(17px,1.5vw,20px)', lineHeight: 1.15 }}>{name}</div>
         <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 'clamp(13px,1.1vw,14.5px)', lineHeight: 1.3, color: 'var(--mb-yellow)' }}>{tag}</div>
         <p style={{ margin: 0, fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 'clamp(12px,1.05vw,13.5px)', lineHeight: 1.5, color: '#fff', textWrap: 'pretty' }}>{desc}</p>
@@ -319,10 +319,10 @@ function CollectionsMobileCarousel({ isMobile }) {
 
   const label = (
     <div style={{ position: 'absolute', left: '6%', right: '6%', bottom: 0, background: '#fff', borderRadius: '6px 6px 0 0', overflow: 'hidden', zIndex: 3, boxShadow: '0 -2px 14px rgba(0,0,0,.12)' }}>
-      <div style={{ height: 68, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff', padding: '6px 12px' }}>
-        <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 88, height: 50, objectFit: 'contain', opacity: .95, display: 'block' }} />
+      <div style={{ height: 52, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff', padding: '4px 10px' }}>
+        <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 50, height: 30, objectFit: 'contain', opacity: .95, display: 'block' }} />
       </div>
-      <div style={{ background: 'var(--mb-blue)', color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 17.5, lineHeight: 1.2, textAlign: 'center', padding: '12px 10px' }}>
+      <div style={{ background: 'var(--mb-blue)', color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 16.5, lineHeight: 1.2, textAlign: 'center', padding: '10px 8px' }}>
         {name}
       </div>
     </div>
@@ -467,7 +467,7 @@ function CollectionsMobileCarousel({ isMobile }) {
             WebkitFontSmoothing: 'antialiased',
           }}
         >
-          <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 68, height: 40, flex: 'none', objectFit: 'contain', objectPosition: 'left center', filter: 'invert(1)', display: 'block' }} />
+          <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 48, height: 28, flex: 'none', objectFit: 'contain', objectPosition: 'left center', filter: 'invert(1)', display: 'block' }} />
           <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 20, lineHeight: 1.15 }}>{name}</div>
           <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 14.5, lineHeight: 1.3, color: 'var(--mb-yellow)' }}>{tag}</div>
           <p style={{ margin: 0, fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 13, lineHeight: 1.5, color: '#fff' }}>{desc}</p>
