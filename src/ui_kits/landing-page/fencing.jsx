@@ -160,11 +160,11 @@ function FenceForm() {
 function CollectionCard({ c: [name, tag, desc, img, icon] }) {
   const [flip, setFlip] = React.useState(false);
   const label = (
-    <div style={{ position: 'absolute', left: '10%', right: '10%', bottom: 0, background: '#fff', borderRadius: '4px 4px 0 0', overflow: 'hidden', zIndex: 3, boxShadow: '0 -2px 10px rgba(0,0,0,.08)' }}>
-      <div style={{ height: 56, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff' }}>
-        <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 64, height: 36, objectFit: 'contain', opacity: .9, display: 'block' }} />
+    <div style={{ position: 'absolute', left: '8%', right: '8%', bottom: 0, background: '#fff', borderRadius: '6px 6px 0 0', overflow: 'hidden', zIndex: 3, boxShadow: '0 -2px 12px rgba(0,0,0,.1)' }}>
+      <div style={{ height: 62, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff', padding: '6px 12px' }}>
+        <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 78, height: 44, objectFit: 'contain', opacity: .95, display: 'block' }} />
       </div>
-      <div style={{ background: 'var(--mb-blue)', color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 15.5, lineHeight: 1.15, textAlign: 'center', padding: '10px 8px' }}>
+      <div style={{ background: 'var(--mb-blue)', color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 16, lineHeight: 1.15, textAlign: 'center', padding: '11px 8px' }}>
         {name}
       </div>
     </div>
@@ -265,6 +265,42 @@ function CollectionsMobileCarousel({ isMobile }) {
   const [cur, setCur] = React.useState(0);
   const [flipped, setFlipped] = React.useState(false);
   const [paused, setPaused] = React.useState(false);
+  const touchStartRef = React.useRef(null);
+  const touchStartYRef = React.useRef(null);
+
+  const prevCard = (e) => {
+    if (e) e.stopPropagation();
+    setFlipped(false);
+    setCur(c => (c - 1 + COLLECTIONS.length) % COLLECTIONS.length);
+  };
+
+  const nextCard = (e) => {
+    if (e) e.stopPropagation();
+    setFlipped(false);
+    setCur(c => (c + 1) % COLLECTIONS.length);
+  };
+
+  const handleTouchStart = (e) => {
+    setPaused(true);
+    touchStartRef.current = e.touches[0].clientX;
+    touchStartYRef.current = e.touches[0].clientY;
+  };
+
+  const handleTouchEnd = (e) => {
+    setPaused(false);
+    if (touchStartRef.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartRef.current;
+    const deltaY = e.changedTouches[0].clientY - (touchStartYRef.current || 0);
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 35) {
+      if (deltaX < 0) {
+        nextCard();
+      } else {
+        prevCard();
+      }
+    }
+    touchStartRef.current = null;
+    touchStartYRef.current = null;
+  };
 
   React.useEffect(() => {
     if (paused) return;
@@ -275,18 +311,18 @@ function CollectionsMobileCarousel({ isMobile }) {
         setFlipped(false);
         setCur(c => (c + 1) % COLLECTIONS.length);
       }
-    }, 2800);
+    }, 3200);
     return () => clearTimeout(timer);
   }, [cur, flipped, paused]);
 
   const [name, tag, desc, img, icon] = COLLECTIONS[cur];
 
   const label = (
-    <div style={{ position: 'absolute', left: '10%', right: '10%', bottom: 0, background: '#fff', borderRadius: '4px 4px 0 0', overflow: 'hidden', zIndex: 3, boxShadow: '0 -2px 10px rgba(0,0,0,.08)' }}>
-      <div style={{ height: 56, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff' }}>
-        <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 64, height: 36, objectFit: 'contain', opacity: .9, display: 'block' }} />
+    <div style={{ position: 'absolute', left: '6%', right: '6%', bottom: 0, background: '#fff', borderRadius: '6px 6px 0 0', overflow: 'hidden', zIndex: 3, boxShadow: '0 -2px 14px rgba(0,0,0,.12)' }}>
+      <div style={{ height: 68, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff', padding: '6px 12px' }}>
+        <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 88, height: 50, objectFit: 'contain', opacity: .95, display: 'block' }} />
       </div>
-      <div style={{ background: 'var(--mb-blue)', color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 16, lineHeight: 1.15, textAlign: 'center', padding: '10px 10px' }}>
+      <div style={{ background: 'var(--mb-blue)', color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 17.5, lineHeight: 1.2, textAlign: 'center', padding: '12px 10px' }}>
         {name}
       </div>
     </div>
@@ -294,12 +330,68 @@ function CollectionsMobileCarousel({ isMobile }) {
 
   return (
     <div
-      style={{ maxWidth: 350, margin: '0 auto', padding: '0 12px' }}
+      style={{ maxWidth: 360, margin: '0 auto', padding: '0 18px', position: 'relative' }}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
-      onTouchStart={() => setPaused(true)}
-      onTouchEnd={() => setPaused(false)}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
+      {/* Navigation Arrow Left */}
+      <button
+        type="button"
+        onClick={prevCard}
+        aria-label="Previous fencing style"
+        style={{
+          position: 'absolute',
+          left: 2,
+          top: '44%',
+          transform: 'translateY(-50%)',
+          width: 42,
+          height: 42,
+          borderRadius: '50%',
+          border: '1px solid var(--border-hairline)',
+          background: '#fff',
+          color: 'var(--mb-blue)',
+          boxShadow: '0 4px 14px rgba(0,0,0,.18)',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 10,
+          WebkitTapHighlightColor: 'transparent'
+        }}
+      >
+        <FIcon name="chevron-left" size={24} stroke={2.5} />
+      </button>
+
+      {/* Navigation Arrow Right */}
+      <button
+        type="button"
+        onClick={nextCard}
+        aria-label="Next fencing style"
+        style={{
+          position: 'absolute',
+          right: 2,
+          top: '44%',
+          transform: 'translateY(-50%)',
+          width: 42,
+          height: 42,
+          borderRadius: '50%',
+          border: '1px solid var(--border-hairline)',
+          background: '#fff',
+          color: 'var(--mb-blue)',
+          boxShadow: '0 4px 14px rgba(0,0,0,.18)',
+          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 10,
+          WebkitTapHighlightColor: 'transparent'
+        }}
+      >
+        <FIcon name="chevron-right" size={24} stroke={2.5} />
+      </button>
+
       <div
         tabIndex={0}
         onClick={() => setFlipped(f => !f)}
@@ -375,7 +467,7 @@ function CollectionsMobileCarousel({ isMobile }) {
             WebkitFontSmoothing: 'antialiased',
           }}
         >
-          <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 56, height: 34, flex: 'none', objectFit: 'contain', objectPosition: 'left center', filter: 'invert(1)', display: 'block' }} />
+          <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 68, height: 40, flex: 'none', objectFit: 'contain', objectPosition: 'left center', filter: 'invert(1)', display: 'block' }} />
           <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 20, lineHeight: 1.15 }}>{name}</div>
           <div style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 14.5, lineHeight: 1.3, color: 'var(--mb-yellow)' }}>{tag}</div>
           <p style={{ margin: 0, fontFamily: 'var(--font-display)', fontWeight: 300, fontSize: 13, lineHeight: 1.5, color: '#fff' }}>{desc}</p>
@@ -864,14 +956,14 @@ function FencingPage() {
 
     <section style={{ padding: isMobile ? '40px 0' : '64px 0' }}>
       <Wrap style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit,minmax(300px,1fr))', gap: isMobile ? 24 : 44, alignItems: 'center' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 14, alignItems: 'flex-start' }}>
+        <div style={{ order: isMobile ? 2 : 1, display: 'flex', flexDirection: 'column', gap: 14, alignItems: 'flex-start' }}>
           <FTag accent="Privacy." style={{ background: '#000' }}>Security. Curb Appeal.</FTag>
           <h2 style={lpH2}>A Better Perimeter Starts With the <span style={{ color: 'var(--mb-blue)' }}>Right Fence</span></h2>
           <p style={{ fontFamily: 'var(--font-display)', fontSize: 14, lineHeight: 1.45, color: 'var(--mb-blue)', margin: 0 }}>Your fence should not feel like an afterthought. It should make your property feel more private, secure, and complete.</p>
           <p style={{ ...lpBody, fontSize: 12 }}>Mulholland Brand creates custom aluminum fencing for Southern California homes that need a modern exterior solution, not a standard, one-size-fits-all panel. Our team will review your space, your preferred style, and the design details that matter before recommending the right fencing system for your property.</p>
           <FB href="#quote" style={{ marginTop: 6, width: isMobile ? '100%' : 'auto', textAlign: 'center', justifyContent: 'center' }}>Get My Free On-Site Estimate</FB>
         </div>
-        <div className="img-zoom-wrap" style={{ height: isMobile ? 240 : 360, borderRadius: 6, overflow: 'hidden', position: 'relative', boxShadow: '0 4px 14px rgba(0,0,0,.08)' }}><img src={resolvePhoto('backyard-privacy-slats.jpg', isMobile)} alt="Backyard Privacy Slats" className="banner-zoom-img" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></div>
+        <div className="img-zoom-wrap" style={{ order: isMobile ? 1 : 2, height: isMobile ? 260 : 360, borderRadius: 6, overflow: 'hidden', position: 'relative', boxShadow: '0 4px 14px rgba(0,0,0,.08)' }}><img src={resolvePhoto('backyard-privacy-slats.jpg', isMobile)} alt="Backyard Privacy Slats" className="banner-zoom-img" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></div>
       </Wrap>
     </section>
 
