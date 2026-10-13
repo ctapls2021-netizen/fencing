@@ -910,8 +910,12 @@ function FencingPage() {
 
     <ProductGallery />
 
-    <section className="img-zoom-wrap" style={{ position: 'relative', minHeight: 440, display: 'flex', alignItems: 'center', overflow: 'hidden', color: '#fff' }}><div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}><img src={resolvePhoto('factory-floor.jpg', isMobile)} alt="Factory Floor" className="banner-zoom-img ambient-zoom-bg" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></div><div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(12,20,36,.92) 0%, rgba(12,20,36,.78) 45%, rgba(12,20,36,.45) 100%)' }} />
-      <Wrap max={1060} style={{ width: '100%', padding: '80px 24px' }}>
+    <section className="img-zoom-wrap" style={{ position: 'relative', minHeight: 440, display: 'flex', alignItems: 'center', overflow: 'hidden', color: '#fff' }}>
+      <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 0 }}>
+        <img src={resolvePhoto('factory-floor.jpg', isMobile)} alt="Factory Floor" className="banner-zoom-img ambient-zoom-bg" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+      </div>
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(12,20,36,.92) 0%, rgba(12,20,36,.78) 45%, rgba(12,20,36,.45) 100%)', zIndex: 1 }} />
+      <Wrap max={1060} style={{ position: 'relative', zIndex: 2, width: '100%', padding: '80px 24px' }}>
         <div style={{ maxWidth: 560, display: 'flex', flexDirection: 'column', gap: 16, alignItems: 'flex-start' }}>
           <FEyebrow color="var(--mb-yellow)">The Mulholland advantage</FEyebrow>
           <h2 style={{ ...lpH2, color: '#fff', fontSize: 'clamp(28px,3.6vw,40px)' }}>Local Fabrication. One Team. <span style={{ color: 'var(--mb-yellow)' }}>A Coordinated Result.</span></h2>
@@ -954,8 +958,12 @@ function FencingPage() {
 
     <div style={{ background: 'var(--mb-tint)' }}><Faq wide items={FENCE_FAQ} /></div>
 
-    <section className="img-zoom-wrap" style={{ position: 'relative', overflow: 'hidden', color: '#fff', minHeight: isMobile ? 480 : 620, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: isMobile ? '72px 16px 80px' : '140px 24px 120px', textAlign: 'center' }}><div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}><img src={resolvePhoto('house-modern-slat-fence.jpg', isMobile)} alt="Modern Slat Fence" className="banner-zoom-img ambient-zoom-bg" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%', display: 'block' }} /></div><div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(8,12,22,.55) 0%, rgba(10,22,48,.72) 45%, #0B1A3A 100%)' }} />
-      <div style={{ maxWidth: 820, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
+    <section className="img-zoom-wrap" style={{ position: 'relative', overflow: 'hidden', color: '#fff', minHeight: isMobile ? 480 : 620, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: isMobile ? '72px 16px 80px' : '140px 24px 120px', textAlign: 'center' }}>
+      <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 0 }}>
+        <img src={resolvePhoto('house-modern-slat-fence.jpg', isMobile)} alt="Modern Slat Fence" className="banner-zoom-img ambient-zoom-bg" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%', display: 'block' }} />
+      </div>
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(8,12,22,.55) 0%, rgba(10,22,48,.72) 45%, #0B1A3A 100%)', zIndex: 1 }} />
+      <div style={{ position: 'relative', zIndex: 2, maxWidth: 820, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
         <FTag accent="Limited-time" style={{ background: 'var(--mb-navy)' }}>Offer</FTag>
         <h2 style={{ ...lpH2, color: '#fff', fontSize: 'clamp(28px,4.2vw,48px)' }}><span style={{ color: 'var(--mb-yellow)' }}>Save Up to 60%</span> on Select Premium Aluminum Fencing Styles</h2>
         <p style={{ ...lpBody, color: '#fff', fontSize: 13 }}>Bring more privacy, security, and architectural style to your property with a fencing system built by Mulholland Brand. Request your Free On-Site Estimate to review your options and confirm availability for the current promotion.</p>

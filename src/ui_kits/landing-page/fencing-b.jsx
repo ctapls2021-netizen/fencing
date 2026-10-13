@@ -222,7 +222,6 @@ function Perimeter() {
 
 function StylePicker() {
   const isMobile = useIsMobile(768);
-  const [view, setView] = React.useState('grid');
   const [a, setA] = React.useState(0);
   const C = COLLECTIONS;
   return <section style={{ background: 'var(--mb-tint)', padding: isMobile ? '48px 0 56px' : 'clamp(72px,9vw,120px) 0' }}>
@@ -235,58 +234,8 @@ function StylePicker() {
         <p style={{ ...bBody, maxWidth: 460 }}>Your fence should match the architecture of your home, the privacy you want, and the way your property is laid out. We offer eight custom aluminum fencing collections, each powder-coated, rust-free, and built to follow your terrain.</p>
       </div>
 
-      {!isMobile && (
-        <div style={{ display: 'flex', justifyContent: 'flex-end', gap: 10, marginBottom: 28 }}>
-          <button
-            type="button"
-            onClick={() => setView('grid')}
-            style={{
-              padding: '8px 18px',
-              borderRadius: 999,
-              border: '1px solid ' + (view === 'grid' ? NAVY : 'var(--border-hairline)'),
-              background: view === 'grid' ? NAVY : '#fff',
-              color: view === 'grid' ? '#fff' : 'var(--text-body)',
-              fontSize: 13,
-              fontFamily: 'var(--font-ui)',
-              fontWeight: 600,
-              cursor: 'pointer',
-              transition: 'all .2s ease'
-            }}
-          >
-            Collection Cards (8)
-          </button>
-          <button
-            type="button"
-            onClick={() => setView('studio')}
-            style={{
-              padding: '8px 18px',
-              borderRadius: 999,
-              border: '1px solid ' + (view === 'studio' ? NAVY : 'var(--border-hairline)'),
-              background: view === 'studio' ? NAVY : '#fff',
-              color: view === 'studio' ? '#fff' : 'var(--text-body)',
-              fontSize: 13,
-              fontFamily: 'var(--font-ui)',
-              fontWeight: 600,
-              cursor: 'pointer',
-              transition: 'all .2s ease'
-            }}
-          >
-            Interactive Studio
-          </button>
-        </div>
-      )}
-
       {isMobile ? (
         <CollectionsMobileCarousel isMobile={isMobile} />
-      ) : view === 'grid' ? (
-        <>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(264px,1fr))', gap: '28px 24px', textAlign: 'left' }}>
-            {C.map(c => <CollectionCard key={c[0]} c={c} />)}
-          </div>
-          <div style={{ textAlign: 'center', marginTop: 40 }}>
-            <BB href="#quote-b" size="lg" style={{ background: NAVY, borderColor: NAVY }}>Explore My Fencing Options</BB>
-          </div>
-        </>
       ) : (
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 'clamp(24px,4vw,56px)', alignItems: 'stretch' }}>
           <div role="tablist" style={{ flex: '1 1 300px', display: 'flex', flexDirection: 'column', borderTop: '1px solid var(--border-hairline)' }}>
@@ -718,8 +667,12 @@ function FinalQuote() {
   const isMobile = useIsMobile(768);
   const getSiteSrc = f => SITE + (isMobile ? toThumb(f) : f);
   // FenceForm from import
-  return <section id="quote-b2" className="img-zoom-wrap" style={{ position: 'relative', overflow: 'hidden', color: '#fff', padding: isMobile ? '48px 0 60px' : 'clamp(72px,9vw,128px) 0' }}><div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}><img src={getSiteSrc('craft-1.SE-ikNJG_1l86za.webp')} alt="Mulholland Craft" className="banner-zoom-img ambient-zoom-bg" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} /></div><div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(0,26,48,.95) 0%, rgba(0,40,72,.85) 50%, rgba(0,59,105,.7) 100%)' }} />
-    <BWrap style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit,minmax(min(100%,400px),1fr))', gap: isMobile ? 32 : 'clamp(40px,6vw,96px)', alignItems: 'center' }}>
+  return <section id="quote-b2" className="img-zoom-wrap" style={{ position: 'relative', overflow: 'hidden', color: '#fff', padding: isMobile ? '48px 0 60px' : 'clamp(72px,9vw,128px) 0' }}>
+    <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 0 }}>
+      <img src={getSiteSrc('craft-1.SE-ikNJG_1l86za.webp')} alt="Mulholland Craft" className="banner-zoom-img ambient-zoom-bg" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+    </div>
+    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(90deg, rgba(0,26,48,.95) 0%, rgba(0,40,72,.85) 50%, rgba(0,59,105,.7) 100%)', zIndex: 1 }} />
+    <BWrap style={{ position: 'relative', zIndex: 2, display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit,minmax(min(100%,400px),1fr))', gap: isMobile ? 32 : 'clamp(40px,6vw,96px)', alignItems: 'center' }}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 20, alignItems: 'flex-start' }}>
         <Kicker color="var(--mb-yellow)">Limited-time offer</Kicker>
         <h2 style={{ ...bH2, color: '#fff', fontSize: 'clamp(30px,4.4vw,56px)' }}><span style={{ color: 'var(--mb-yellow)' }}>Save Up to 60%</span> on Select Premium Aluminum Fencing Styles</h2>
