@@ -1,0 +1,32 @@
+:root{
+/* Principal (brand guide) */
+--mb-blue:#2C65B0;--mb-ink:#252525;--mb-white:#FFFFFF;
+/* Secondary (brand guide) */
+--mb-navy:#273854;--mb-cream:#F1EFEA;--mb-blue-light:#4F82C1;
+/* Marketing CTA (brand guide) */
+--mb-gold:#E4B73D;--mb-yellow:#FFDE59;
+/* Extended — observed in landing pages / site */
+--mb-blue-deep:#1F4F93;--mb-blue-sky:#5B8FD3;--mb-navy-site:#003B69;
+--mb-tint:#F4F7FC;--mb-gray-100:#F5F5F5;--mb-gray-200:#E6E6E6;--mb-gray-400:#9A9A9A;--mb-gray-600:#5E5E5E;
+--mb-star:#F5B915;--mb-success:#2E8B57;--mb-danger:#C8382E;
+
+/* Gradients */
+--grad-gold:linear-gradient(90deg,#E4B73D 0%,#FFDE59 55%,#E4B73D 100%); /* @kind color */
+
+--grad-gold-soft:linear-gradient(90deg,#EAC65A 0%,#E4B73D 100%); /* @kind color */
+
+--grad-blue-panel:linear-gradient(180deg,#5B8FD3 0%,#2C65B0 100%); /* @kind color */
+
+--grad-blue-bar:linear-gradient(90deg,#2C65B0 0%,#1F4F93 100%); /* @kind color */
+
+--grad-photo-protect:linear-gradient(90deg,rgba(15,22,35,.72) 0%,rgba(15,22,35,.35) 55%,rgba(15,22,35,0) 100%); /* @kind color */
+
+--grad-caption:linear-gradient(0deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 100%); /* @kind color */
+
+
+/* Semantic */
+--text-strong:var(--mb-ink);--text-body:#3A3A3A;--text-muted:var(--mb-gray-600);--text-brand:var(--mb-blue);--text-on-brand:var(--mb-white);--text-accent:var(--mb-yellow);--text-on-gold:var(--mb-navy);
+--surface-page:var(--mb-white);--surface-tint:var(--mb-tint);--surface-warm:var(--mb-cream);--surface-brand:var(--mb-blue);--surface-dark:var(--mb-navy);--surface-card:var(--mb-white);
+--border-hairline:#DADFE8;--border-brand:var(--mb-blue);--border-field:#D6DCE6;--border-on-dark:rgba(255,255,255,.55);
+--cta-primary:var(--mb-blue);--cta-primary-hover:var(--mb-blue-deep);--cta-accent:var(--mb-gold);--cta-accent-hover:#D6A82C;
+}

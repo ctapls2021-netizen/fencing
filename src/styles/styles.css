@@ -1,0 +1,89 @@
+@import "tokens/fonts.css";
+@import "tokens/colors.css";
+@import "tokens/typography.css";
+@import "tokens/spacing.css";
+@import "tokens/effects.css";
+@import "tokens/base.css";
+
+@keyframes mbMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.mb-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: mbMarquee 20s linear infinite;
+  will-change: transform;
+}
+
+.mb-marquee-track:hover,
+.mb-marquee-track:active {
+  animation-play-state: paused;
+}
+
+/* Hero background zoom-in effect: clearly noticeable (1.0 to 1.18) */
+@keyframes heroZoomNoticeable {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.18);
+  }
+}
+
+.hero-zoom-bg {
+  animation: heroZoomNoticeable 10s ease-in-out infinite alternate !important;
+  will-change: transform;
+  transform-origin: center center;
+}
+
+/* Text llamador pulse on "Up to 60%*" letters (direct typography effect) */
+@keyframes textLlamadorLetters {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 6px rgba(254, 204, 42, 0.35));
+  }
+  50% {
+    transform: scale(1.055);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 22px rgba(254, 204, 42, 0.95)) drop-shadow(0 0 38px rgba(254, 204, 42, 0.7));
+  }
+}
+
+.text-llamador-pulse {
+  display: inline-block;
+  animation: textLlamadorLetters 2.4s ease-in-out infinite !important;
+  will-change: transform, filter;
+}
+
+
+/* How It Works Card Hover Animation (lift card + zoom image + title highlight) */
+.step-card {
+  transition: transform 500ms ease-in-out !important;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+}
+
+.step-card-img {
+  transition: transform 700ms ease-in-out !important;
+  will-change: transform;
+}
+
+.step-card:hover .step-card-img {
+  transform: scale(1.1);
+}
+
+.step-card-title {
+  transition: color 300ms ease-in-out !important;
+}
+
+.step-card:hover .step-card-title {
+  color: var(--mb-blue) !important;
+}
+
+
+

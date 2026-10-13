@@ -1,0 +1,14 @@
+:root{
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:32px;--space-7:48px;--space-8:64px;--space-9:96px;--space-10:128px;
+--container-max:1200px; /* @kind spacing */
+--container-narrow:760px; /* @kind spacing */
+--gutter:24px; /* @kind spacing */
+--section-y:96px; /* @kind spacing */
+
+--header-h:64px; /* @kind spacing */
+--field-h:44px; /* @kind spacing */
+--button-h:44px; /* @kind spacing */
+--button-h-sm:36px; /* @kind spacing */
+--button-h-lg:54px; /* @kind spacing */
+
+}

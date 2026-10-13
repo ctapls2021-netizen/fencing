@@ -1,0 +1,19 @@
+:root{
+/* Corners: architectural — mostly square */
+--radius-0:0;--radius-xs:2px;--radius-sm:4px;--radius-md:6px;--radius-pill:999px;
+--radius-button:2px;--radius-field:0;--radius-card:4px;
+/* Shadows — restrained */
+--shadow-card:0 10px 30px rgba(20,35,60,.12);--shadow-panel:0 18px 40px rgba(15,30,60,.28);--shadow-badge:0 4px 14px rgba(0,0,0,.25);--shadow-text:0 2px 12px rgba(0,0,0,.35);
+--border-1:1px solid var(--border-hairline); /* @kind other */
+--border-brand-1:1px solid var(--mb-blue); /* @kind other */
+
+--ease-out:cubic-bezier(.2,.7,.2,1); /* @kind other */
+--dur-fast:150ms; /* @kind other */
+--dur-med:250ms; /* @kind other */
+--dur-slow:400ms; /* @kind other */
+
+--overlay-dark:rgba(15,22,35,.45); /* @kind color */
+--overlay-blue:rgba(44,101,176,.78); /* @kind color */
+--glass-white:rgba(255,255,255,.14); /* @kind color */
+
+}

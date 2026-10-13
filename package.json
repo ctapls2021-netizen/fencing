@@ -1,0 +1,17 @@
+{
+  "name": "mulholland-landings-v1-v2",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev --port 4324",
+    "start": "astro dev --port 4324",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.2.1",
+    "astro": "^5.2.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

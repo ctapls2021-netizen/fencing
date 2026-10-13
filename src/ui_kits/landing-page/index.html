@@ -1,0 +1,27 @@
+<!-- @dsCard group="Landing Pages" viewport="1100x760" name="Paid-traffic landing page" subtitle="Gates & Fences, Pergolas and 60% Off Fencing landing pages, interactive" -->
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mulholland Brand — Landing Page</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script>window.MB_ASSET_BASE='../../assets/';</script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;background:#fff;font-family:var(--font-body);color:var(--mb-ink)}*{box-sizing:border-box}html{scroll-behavior:smooth}</style>
+</head><body><div id="root"></div>
+<script type="text/babel" src="shared.jsx"></script>
+<script type="text/babel" src="gates.jsx"></script>
+<script type="text/babel" src="pergolas.jsx"></script>
+<script type="text/babel" src="fencing.jsx"></script>
+<script type="text/babel">
+function LandingApp(){
+  const [page,setPage]=React.useState(()=>localStorage.getItem('mb-lp-page')||'gates');
+  React.useEffect(()=>{localStorage.setItem('mb-lp-page',page);window.scrollTo(0,0);},[page]);
+  const tab=(id,label)=><button onClick={()=>setPage(id)} style={{border:0,cursor:'pointer',padding:'7px 14px',fontFamily:'var(--font-ui)',fontWeight:700,fontSize:11,background:page===id?'var(--mb-blue)':'transparent',color:page===id?'#fff':'var(--mb-ink)'}}>{label}</button>;
+  return <>
+    {page==='gates'?<GatesPage/>:page==='fencing'?<FencingPage/>:<PergolasPage/>}
+    <div style={{position:'fixed',left:16,bottom:16,zIndex:50,display:'flex',background:'#fff',boxShadow:'var(--shadow-card)',border:'1px solid var(--border-hairline)'}}>{tab('gates','Gates & Fences')}{tab('pergolas','Pergolas')}{tab('fencing','60% Off Fencing')}</div>
+  </>;
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<LandingApp/>);
+</script></body></html>
