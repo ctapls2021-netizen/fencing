@@ -160,11 +160,11 @@ function FenceForm() {
 function CollectionCard({ c: [name, tag, desc, img, icon] }) {
   const [flip, setFlip] = React.useState(false);
   const label = (
-    <div style={{ position: 'absolute', left: '8%', right: '8%', bottom: 0, background: '#fff', borderRadius: '6px 6px 0 0', overflow: 'hidden', zIndex: 3, boxShadow: '0 -2px 12px rgba(0,0,0,.1)' }}>
-      <div style={{ height: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff', padding: '4px 10px' }}>
+    <div style={{ position: 'absolute', left: '8%', right: '8%', bottom: 0, borderRadius: '6px 6px 0 0', overflow: 'hidden', zIndex: 3, boxShadow: '0 -2px 12px rgba(0,0,0,.1)' }}>
+      <div style={{ height: 50, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff', padding: '4px 10px', width: 'calc(100% + 2px)', marginLeft: -1, boxSizing: 'border-box' }}>
         <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 48, height: 28, objectFit: 'contain', opacity: .95, display: 'block' }} />
       </div>
-      <div style={{ background: 'var(--mb-blue)', color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 15, lineHeight: 1.15, textAlign: 'center', padding: '9px 8px' }}>
+      <div style={{ background: 'var(--mb-blue)', color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 15, lineHeight: 1.15, textAlign: 'center', padding: '9px 8px', width: 'calc(100% + 2px)', marginLeft: -1, boxSizing: 'border-box' }}>
         {name}
       </div>
     </div>
@@ -318,11 +318,11 @@ function CollectionsMobileCarousel({ isMobile }) {
   const [name, tag, desc, img, icon] = COLLECTIONS[cur];
 
   const label = (
-    <div style={{ position: 'absolute', left: '6%', right: '6%', bottom: 0, background: '#fff', borderRadius: '6px 6px 0 0', overflow: 'hidden', zIndex: 3, boxShadow: '0 -2px 14px rgba(0,0,0,.12)' }}>
-      <div style={{ height: 52, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff', padding: '4px 10px' }}>
+    <div style={{ position: 'absolute', left: '6%', right: '6%', bottom: 0, borderRadius: '6px 6px 0 0', overflow: 'hidden', zIndex: 3, boxShadow: '0 -2px 14px rgba(0,0,0,.12)' }}>
+      <div style={{ height: 52, display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#fff', padding: '4px 10px', width: 'calc(100% + 2px)', marginLeft: -1, boxSizing: 'border-box' }}>
         <img src={'/assets/icons/products/' + icon + '.png'} alt="" style={{ width: 50, height: 30, objectFit: 'contain', opacity: .95, display: 'block' }} />
       </div>
-      <div style={{ background: 'var(--mb-blue)', color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 16.5, lineHeight: 1.2, textAlign: 'center', padding: '10px 8px' }}>
+      <div style={{ background: 'var(--mb-blue)', color: '#fff', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 16.5, lineHeight: 1.2, textAlign: 'center', padding: '10px 8px', width: 'calc(100% + 2px)', marginLeft: -1, boxSizing: 'border-box' }}>
         {name}
       </div>
     </div>
