@@ -51,15 +51,60 @@ function OfferBar() {
 
 function BHeader() {
   const isMobile = useIsMobile(768);
-  return <header style={{ position: 'sticky', top: 0, zIndex: 100, background: '#fff', backdropFilter: 'blur(8px)', borderBottom: '1px solid var(--border-hairline)', boxShadow: '0 2px 10px rgba(0,0,0,.05)' }}>
-    <BWrap style={{ height: isMobile ? 56 : 76, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: isMobile ? 10 : 20 }}>
-      <BLogo height={isMobile ? 30 : 42} />
-      <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 8 : 22 }}>
-        <a href="tel:8005625770" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontFamily: 'var(--font-ui)', fontWeight: 700, fontSize: isMobile ? 12 : 15, color: NAVY, textDecoration: 'none', whiteSpace: 'nowrap' }}><BIcon name="phone" size={isMobile ? 13 : 16} stroke={1.5} />(800) 562-5770</a>
-        <BB href="#quote-b" size={isMobile ? "sm" : "md"} style={{ background: NAVY, borderColor: NAVY, padding: isMobile ? '0 12px' : '0 24px', height: isMobile ? 36 : 44, fontSize: isMobile ? 12 : 14, whiteSpace: 'nowrap' }}>Get a Quote</BB>
-      </div>
-    </BWrap>
-  </header>;
+  return (
+    <header style={{ position: 'sticky', top: 0, zIndex: 100, background: '#fff', backdropFilter: 'blur(8px)', borderBottom: '1px solid var(--border-hairline)', boxShadow: '0 2px 10px rgba(0,0,0,.05)', width: '100%', maxWidth: '100%', boxSizing: 'border-box' }}>
+      <BWrap style={{
+        height: isMobile ? 56 : 76,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: isMobile ? 'clamp(4px, 1.5vw, 8px)' : 20,
+        padding: isMobile ? '0 clamp(8px, 2.5vw, 12px)' : '0 clamp(16px,4vw,96px)',
+        boxSizing: 'border-box'
+      }}>
+        <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center' }}>
+          <BLogo height={isMobile ? 24 : 42} style={{ maxHeight: isMobile ? 24 : 42, width: 'auto' }} />
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: isMobile ? 'clamp(5px, 1.6vw, 10px)' : 22, flexShrink: 0 }}>
+          <a
+            href="tel:8005625770"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: isMobile ? 4 : 6,
+              fontFamily: 'var(--font-ui)',
+              fontWeight: 700,
+              fontSize: isMobile ? 'clamp(10.5px, 2.6vw, 11.5px)' : 15,
+              color: NAVY,
+              textDecoration: 'none',
+              whiteSpace: 'nowrap',
+              flexShrink: 0
+            }}
+          >
+            <BIcon name="phone" size={isMobile ? 12 : 16} stroke={1.5} />
+            (800) 562-5770
+          </a>
+          <BB
+            href="#quote-b"
+            size={isMobile ? "sm" : "md"}
+            iconRight={isMobile ? null : undefined}
+            style={{
+              background: NAVY,
+              borderColor: NAVY,
+              padding: isMobile ? '0 clamp(8px, 2.2vw, 11px)' : '0 24px',
+              height: isMobile ? 32 : 44,
+              fontSize: isMobile ? 'clamp(10.5px, 2.6vw, 11.5px)' : 14,
+              whiteSpace: 'nowrap',
+              flexShrink: 0
+            }}
+          >
+            <span className="b-cta-full">Get a Quote</span>
+            <span className="b-cta-short">Quote</span>
+          </BB>
+        </div>
+      </BWrap>
+    </header>
+  );
 }
 
 function BHero() {

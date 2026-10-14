@@ -149,3 +149,16 @@
   will-change: transform;
   transform-origin: center center;
 }
+
+/* Responsive mobile header CTA text */
+.b-cta-short {
+  display: none !important;
+}
+@media (max-width: 345px) {
+  .b-cta-full {
+    display: none !important;
+  }
+  .b-cta-short {
+    display: inline !important;
+  }
+}
