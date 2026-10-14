@@ -611,9 +611,9 @@ const GALLERY = [
   ['backyard-privacy-slats.jpg', 'Backyard Privacy Slats', 2, 1],
   ['gate-row-2.jpg', 'Solid Series Perimeter Fence', 1, 1],
   ['woodlook-walk-gate.jpg', 'Wood-Look Walk Gate', 1, 1],
-  ['gate-row-3.jpg', 'Horizontal Slat Wall Topper', 2, 1],
+  ['woodlook-fence-2.jpg', 'Wood-Like Fence & Gate', 2, 1],
   ['gate-hitech-garden.jpg', 'Hi-Tech Privacy Fencing', 1, 1],
-  ['woodlook-fence-2.jpg', 'Wood-Like Fence & Gate', 1, 1],
+  ['gate-row-3.jpg', 'Horizontal Slat Wall Topper', 1, 1],
 ];
 function GalleryTile({ img, title, c, r, onOpen, isMobile }) {
   const [h, setH] = React.useState(false);

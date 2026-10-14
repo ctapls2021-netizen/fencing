@@ -250,7 +250,7 @@ function Perimeter() {
   return <section style={{ padding: isMobile ? '48px 0' : 'clamp(72px,9vw,128px) 0' }}>
     <BWrap style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit,minmax(min(100%,420px),1fr))', gap: isMobile ? 28 : 'clamp(40px,6vw,96px)', alignItems: 'center' }}>
       <div style={{ display: 'grid', gridTemplateColumns: '1.3fr 1fr', gridTemplateRows: '1fr 1fr', gap: 10, height: isMobile ? 280 : 'clamp(380px,40vw,520px)' }}>
-        <img src={SITE + imgs[0]} alt="" style={{ gridRow: 'span 2', width: '100%', height: '100%', objectFit: 'cover', borderRadius: 6 }} />
+        <img src={SITE + imgs[0]} alt="" style={{ gridRow: 'span 2', width: '100%', height: '100%', objectFit: 'cover', objectPosition: '16% center', borderRadius: 6 }} />
         <img src={SITE + imgs[1]} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 6 }} />
         <img src={SITE + imgs[2]} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 6 }} />
       </div>
